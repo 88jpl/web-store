@@ -2,23 +2,32 @@ const API_URL = "https://fakestoreapi.com";
 
 Vue.component("product", {
     template: `
-    <div>
+    <div class="products">
         <div>
             <img v-bind:src="item.image">
             {{ item.price }}
+            <button v-on:click="addToShoppingCart(item)" >Add to cart</button>
         </div>
     </div>
     `,
     props: [
-        "item"
-    ]
-    });
+        "item",
+        "cart"
+    ],
+    methods: {
+        addToShoppingCart: function() {
+            this.cart.push(this.item);
+        }
+    }
+});
 
 var app = new Vue({
     el: "#app",
     data: {
         page: "welcome",
-        products: []
+        products: [],
+        Vuecart: [],
+        Vue2cart: []
     },
     methods: {
         getProducts: async function () {
@@ -29,6 +38,9 @@ var app = new Vue({
         },
         setPage: function (page) {
             this.page = page;
+        },
+        addToCart: function (item) {
+            this.cart.push(this.item)
         }
     },
     created: function () {

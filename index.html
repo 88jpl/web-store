@@ -17,12 +17,17 @@
         <!-- Store Page -->
         <div id="store-page" v-if="page == 'store'">
             <button v-on:click="setPage('checkout')">Cart</button>
-            <product v-for="(product, index) in products" 
-                    v-bind:item="product" v-bind:key="index"></product>
+            <product v-on:click="addToCart(item)"
+                    v-for="(product, index) in products" 
+                    v-bind:item="product" 
+                    v-bind:key="index"
+                    v-bind:cart="Vuecart"></product>
                 
         </div>
         <!-- Checkout Page -->
-        <div id="checkout-page" v-if="page == 'checkout'">
+        <div id="checkout-page" v-if="page == 'checkout'"
+                v-for="product in Vuecart"
+                v-bind:item="product">
 
         </div>
 
