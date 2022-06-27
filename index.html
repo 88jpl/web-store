@@ -5,11 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Test</title>
+    <title>Congo</title>
 </head>
 <body>
     <div id="app">
-        
+        <!-- Welcome Page -->
+        <div id="welcome-page" v-if="page == 'welcome'">
+            <h1> Welcome to the Congo</h1>
+            <button v-on:click="setPage('store')">Enter Store</button>
+        </div>
+        <!-- Store Page -->
+        <div id="store-page" v-if="page == 'store'">
+            <button v-on:click="setPage('checkout')">Cart</button>
+            <product v-for="(product, index) in products" 
+                    v-bind:item="product" v-bind:key="index"></product>
+                
+        </div>
+        <!-- Checkout Page -->
+        <div id="checkout-page" v-if="page == 'checkout'">
+
+        </div>
 
 
     </div>
