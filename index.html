@@ -25,9 +25,11 @@
                 
         </div>
         <!-- Checkout Page -->
-        <div id="checkout-page" v-if="page == 'checkout'"
-                v-for="product in Vuecart"
-                v-bind:item="product">
+        <div id="checkout-page" v-if="page == 'checkout'">
+            <product v-for="(product, index) in Vuecart"
+            v-bind:cart="Vuecart"
+            v-bind:item="product"
+            v-bind:key="index">
 
         </div>
 

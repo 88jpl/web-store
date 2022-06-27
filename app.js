@@ -1,4 +1,6 @@
 const API_URL = "https://fakestoreapi.com";
+// create new component for cart
+// create clickable images to add to cart must be in scope of component
 
 Vue.component("product", {
     template: `
