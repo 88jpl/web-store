@@ -20,7 +20,7 @@
 
 9. Seperate compoenemtns into their own files
 
-10. Ad a backend for users & their carts
+10. Add a backend for users & their carts
 
 11. Add a stock amount field to each product
     (the user can no longer buy and infinite amount of each item)
