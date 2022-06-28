@@ -28,10 +28,11 @@
         </div>
         <!-- Checkout Page -->
         <div id="checkout-page" v-if="page == 'checkout'">
-            <product v-for="(product, index) in Vuecart"
+            <cart-page v-for="(product, index) in Vuecart"
             v-bind:cart="Vuecart"
             v-bind:item="product"
-            v-bind:key="index">
+            v-bind:key="index"
+            v-bind:carttotal="cartTotal"></cart-page>
 
         </div>
 
